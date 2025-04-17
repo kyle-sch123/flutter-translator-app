@@ -105,7 +105,7 @@ class _TranslatorScreenState extends State<TranslatorScreen> {
     try {
       final apiKey = dotenv.env['GOOGLE_API_KEY'];
       final url = Uri.parse(
-          'https://translation.googleapis.com/language/translate/v2?key=AIzaSyAwYAXfeM7tzsGiu95aXemmNBjlIT2IkuI');
+          'https://translation.googleapis.com/language/translate/v2?key=$apiKey');
 
       final response = await http.post(
         url,
@@ -167,7 +167,7 @@ class _TranslatorScreenState extends State<TranslatorScreen> {
     });
 
     try {
-      final apiKey = dotenv.env['GOOGLE_API_KEY'] ?? 'AIzaSyAwYAXfeM7tzsGiu95aXemmNBjlIT2IkuI';
+      final apiKey = dotenv.env['GOOGLE_API_KEY'];
       final url = Uri.parse(
           'https://texttospeech.googleapis.com/v1/text:synthesize?key=$apiKey');
 
